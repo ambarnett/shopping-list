@@ -46,44 +46,21 @@ const calcId = (arr) => {
     const newId = lastItemId + 1
     return newId
 }
-const tea = {
-    id: calcId(foods),
-    name: "Tea",
-    amount: 3,
-    price: 10
-}
-const water = {
-    id: calcId(foods),
-    name: "Water",
-    amount: 2,
-    price: 16
-}
-const pasta = {
-    id: calcId(foods),
-    name: "Pasta",
-    amount: 1,
-    price: 4
-}
-const steak = {
-    id: calcId(foods),
-    name: "Steak",
-    amount: 2,
-    price: 12
-}
-const flour = {
-    id: calcId(foods),
-    name: "Flour",
-    amount: 1,
-    price: 5
-}
 const addToShoppingList = (newId, itemName, itemAmount, itemPrice) => {
+    const time = new Date().getTime()
+    const date = new Date(time) 
     const item = {
         id: newId,
         name: itemName,
         amount: itemAmount,
         price: itemPrice,
-        dateCreated: Date.now()
+        dateCreated: date.toString()
     }
+    foods.push(item)
 }
-foods.push()
+addToShoppingList(calcId(foods), "Tea", 3, 10)
+addToShoppingList(calcId(foods), "Water", 2, 16)
+addToShoppingList(calcId(foods), "Pasta", 1, 4)
+addToShoppingList(calcId(foods), "Steak", 2, 12)
+addToShoppingList(calcId(foods), "Flour", 1, 5)
 console.log(foods)
