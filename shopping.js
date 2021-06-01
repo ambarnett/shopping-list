@@ -21,7 +21,7 @@ const foods = [
         id: 4,
         name: "Greek Yogurt",
         amount: 3,
-        price: 3
+        price: 50
     },
     {
         id: 5,
@@ -63,4 +63,9 @@ addToShoppingList(calcId(foods), "Water", 2, 16)
 addToShoppingList(calcId(foods), "Pasta", 1, 4)
 addToShoppingList(calcId(foods), "Steak", 2, 12)
 addToShoppingList(calcId(foods), "Flour", 1, 5)
-console.log(foods)
+
+for(const food of foods){
+    if(food.price > 8){
+        console.log(food)
+    }
+}
